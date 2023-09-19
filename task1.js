@@ -14,15 +14,8 @@ function getUsersStreets (users){
 
 
 function getOldPeople (users){
-    // создание пустого массива old_peple
-    let old_peple = [];
-    // перебор массива users при помощи метода forEach 
-    users.forEach(element => {
-        // проверка возраста каждого пользователя, в случае если пользователю больше 60 добавление его в массив old_peple
-        if(element.age > 60) old_peple.push(element);
-    });
-    // возвращение массива пользователей старше 60
-    return old_peple;
+    // возвращение массива пользователей старше 60, созданного методом filtred
+    return users.filter(user => user.age > 60);
 };
 
 // массив пользователей для задания 1
@@ -32,7 +25,7 @@ const users_1 = [
     {name: "Yaroslav", age: 27, address: {city: "Krasnogorsk", street: "pl. 1905 year", building: 86}},
     {name: "Illarion", age: 79, address: {city: "Balashikha", street: "Kosmonavtov highway", building: 93}},
     {name: "Alisa", age: 18, address: {city: "Krasnogorsk", street: "Gogol highway", building: 79}},
-    {name: "Stanislav", age: 60, address: {city: "Dmitrov", street: "Gagarin Ave.", building: 81}}
+    {name: "Stanislav", age: 61, address: {city: "Dmitrov", street: "Gagarin Ave.", building: 81}}
 ];
 
 console.log(getTotalAge(users_1));
